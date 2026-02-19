@@ -3,9 +3,16 @@ body {
   margin: 0;
   padding: 20px;
   line-height: 1.6;
+  background-color: #f4f6f8;
+  color: #333;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 h1 {
-  font-size: 28px;
+  font-size: 34px;
+  margin-bottom: 10px;
 }
 h2 {
   font-size: 22px;
