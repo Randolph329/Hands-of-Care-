@@ -140,3 +140,12 @@ details {
  .card:hover {
    background: #f4f8ff;
  }
+
+.resource-card {
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  mar-top: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
