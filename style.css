@@ -78,3 +78,16 @@ details {
  margin: 0 auto;
  padding: 60px 20px
 }
+.button {
+  display: inline-block;
+  background-color: #1a4d8f;
+  color: white;
+  font-size: 22px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 15px;
+}
+.button:hover {
+  background-color: #163e73;
+}
