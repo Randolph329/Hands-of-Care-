@@ -130,6 +130,8 @@ details {
 
 .card {
   display: block;
+  text-decoration: none;
+  color: inherit;
   background: white;
   padding: 20px;
   border-radius: 12px;
