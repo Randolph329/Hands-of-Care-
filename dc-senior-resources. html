@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Senior Resources in Washington DC | Hands of Care</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-brand">Hands of Care</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="directory.html">Resource Directory</a>
+    <a href="contact.html">Application Help</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<h1>Senior Resources in Washington DC</h1>
+
+<p>
+Hands of Care helps seniors and families find trusted programs
+in Washington DC for housing, food, healthcare, transportation,
+and financial assistance.
+</p>
+
+<h2>Common Resources for Seniors</h2>
+
+<ul>
+<li>Senior housing assistance</li>
+<li>Food programs and meal delivery</li>
+<li>Transportation services</li>
+<li>Medicare and healthcare guidance</li>
+<li>Financial assistance programs</li>
+</ul>
+
+<p>
+Browse our full resource directory below.
+</p>
+
+<a href="directory.html" class="button">Browse Resource Directory</a>
+
+</div>
+
+</body>
+</html>
