@@ -68,3 +68,8 @@ details {
   border-radius: 6px
   margin-bottom: 10px;
 }
+.hero {
+ max-width: 900px;
+ margin: 0 auto;
+ padding: 60px 20px
+}
