@@ -59,6 +59,7 @@
     <div class="resource-card">
 
     <ul>
+      
       <li><a href="https://www.fns.usda.gov/snap/supplemental-nutrition-assistance-program" target="_blank">Snap Food Assistance</a></li>
       <li><a href="https://www.mealsonwheelsamerica.org" target="_blank">Meals on Wheels</a></li>
       <li><a href="https://capitalareafoodbank.org" target="_blank">Capitol Area Food Bank</a>
@@ -81,7 +82,9 @@
   <div class="section" id="transportation">
     <h2>🚗 Transportation</h2>
     <div class="resource-card">
+      
     <ul>
+      
       <li><a href="https://www.wmata.com/fares/reduced-fare-programs/senior/" target="_blank">Metro Reduced Fare for Seniors</a></li>
       <li><a href="https://dctaxi.dc.gov/service/taxi-senior-medical-transportation" target="_blank">DC Senior Medical Transportation</a></li>
       <li><a href="https://www.uber.com/us/en/ride/uber-assist/" target="_blank">Uber Assist</a></li>
@@ -98,14 +101,11 @@
       <li><a href="https://www.benefitscheckup.org" target="_blank">BenefitsCheckUp</a></li>
       <li><a href="https://doee.dc.gov/service/energy-assistance-program" target="_blank">DC Energy Assistance Program</a></li>
     </ul>
-    
-  </div>
+      
+      </div>
+      </div>
 
-</div>
-
-</body>
-
-    <script>
+      <script>
       document.getElementById("resourceSearch").addEventListner("keydown", function(e) {
         if (e.key=== "Enter") {
           const value = this.value.toLowerCase().trim();
@@ -120,13 +120,19 @@
             document.getElementById("transportation").scrollIntoView({ behavior: "smooth" });
           } else if (value.includes("benefit")|| value.includes("money") || value.includes("financial")) {
             document.getElementById("benefits").scrollIntoView({ behavior: "smooth" });
-          }
-        }
-      });
-    </script>
+            ...
+          });
+          </script>
+
+          </body>
+          </html>
+          
+        
+      
+    
             
 
           
     
-  </body>
-</html>
+  
+
