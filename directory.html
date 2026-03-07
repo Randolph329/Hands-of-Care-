@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DMV Senior Resource Directory</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6fa;
+      margin: 0;
+      padding: 30px;
+      color: #1f2937;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+      color: #1a4d8f;
+    }
+
+    .tagline {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .search-box {
+      margin: 20px 0;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 14px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .button {
+      display: inline-block;
+      background: #2f65c8;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    .section {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      scroll-margin-top: 20px;
+    }
+
+    .section h2 {
+      margin-top: 0;
+      color: #1a4d8f;
+    }
+
+    .section ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    .section li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>DMV Senior Resource Directory</h1>
+    <div class="tagline">Organized support for seniors and caregivers.</div>
+
+    <div class="search-box">
+      <input
+        id="searchBox"
+        type="text"
+        placeholder="Search: healthcare, food, housing, transportation, benefits"
+      />
+    </div>
+
+    <a href="index.html" class="button">← Back to Home</a>
+
+    <div class="section" id="healthcare">
+      <h2>Healthcare</h2>
+      <ul>
+        <li>Medicare Official Website</li>
+        <li>DC Senior Health Services</li>
+        <li>Mental Health Support Line</li>
+      </ul>
+    </div>
+
+    <div class="section" id="food">
+      <h2>Food & Nutrition</h2>
+      <ul>
+        <li>Meals on Wheels</li>
+        <li>SNAP Food Assistance</li>
+        <li>Capital Area Food Bank</li>
+      </ul>
+    </div>
+
+    <div class="section" id="housing">
+      <h2>Housing & Living</h2>
+      <ul>
+        <li>HUD Housing Assistance</li>
+        <li>Senior Living Resources</li>
+        <li>DC Housing Support</li>
+      </ul>
+    </div>
+
+    <div class="section" id="transportation">
+      <h2>Transportation</h2>
+      <ul>
+        <li>Metro Reduced Fare for Seniors</li>
+        <li>Senior Medical Transportation</li>
+        <li>Uber Assist</li>
+      </ul>
+    </div>
+
+    <div class="section" id="benefits">
+      <h2>Benefits & Financial Help</h2>
+      <ul>
+        <li>Social Security Benefits</li>
+        <li>SSI Financial Support</li>
+        <li>Energy Assistance Program</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("searchBox").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        const value = this.value.toLowerCase().trim();
+
+        if (value.includes("health")) {
+          document.getElementById("healthcare").scrollIntoView({ behavior: "smooth", block: "start" });
+        } else if (value.includes("food") || value.includes("nutrition")) {
+          document.getElementById("food").scrollIntoView({ behavior: "smooth", block: "start" });
+        } else if (value.includes("housing") || value.includes("living")) {
+          document.getElementById("housing").scrollIntoView({ behavior: "smooth", block: "start" });
+        } else if (value.includes("transport")) {
+          document.getElementById("transportation").scrollIntoView({ behavior: "smooth", block: "start" });
+        } else if (
+          value.includes("benefit") ||
+          value.includes("financial") ||
+          value.includes("money")
+        ) {
+          document.getElementById("benefits").scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    });
+  </script>
+</body>
+</html>
