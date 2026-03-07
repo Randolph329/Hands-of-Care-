@@ -33,7 +33,7 @@
 <header>
   <h1>DMV Senior Resource Directory</h1>
   <div class="search-box">
-    <input type="text" placeholder="Search resources (housing, food, healthcare...)" />
+    <input type="text" id="resourceSearch" placeholder="Search resources (housing, food, healthcare...)" />
   </div>
   
   <div class="tagline">Organized support for seniors and caregivers.</div>
@@ -42,7 +42,7 @@
 
 <div class="container">
 
-  <div class="section">
+  <div class="section" id="healthcare">
     <h2>🏥 Healthcare</h2>
     <div class="resource-card">
 
@@ -54,7 +54,7 @@
     
   </div>
 
-  <div class="section">
+  <div class="section" id="food">
     <h2>🍽 Food & Nutrition</h2>
     <div class="resource-card">
 
@@ -66,7 +66,7 @@
     
   </div>
 
-  <div class="section">
+  <div class="section" id="housing">
     <h2>🏠 Housing & Living</h2>
     <div class="resource-card">
 
@@ -78,7 +78,7 @@
     
   </div>
 
-  <div class="section">
+  <div class="section" id="transportation">
     <h2>🚗 Transportation</h2>
     <div class="resource-card">
     <ul>
@@ -89,7 +89,7 @@
     
   </div>
 
-  <div class="section">
+  <div class="section" id="benefits">
     <h2>💰 Benefits & Financial Help</h2>
     <div class="resource-card">
 
@@ -104,4 +104,24 @@
 </div>
 
 </body>
+
+    <script>
+      document.getElementById("resourceSearch").addEventListner("keydown", function(e) {
+        if (e.key=== "Enter") {
+          const value = this.value.toLowerCase().trim();
+
+          if (vaule.includes("health")) {
+            document.getElementById("healthcare").scrollIntoView({ behavior: "smooth" });
+          } else if (value.includes("food")) {
+            document.getElementById("food").scrollIntoView({ behavior: "smooth" });
+          } else if (value.includes("housing")) {
+           document.getElementById("housing").scrollIntoView({ behavior: "smooth" });
+          } else if (value.inclides("transport")) {
+            document.getElementById("transportation").scrollIntoView({ behavior: "smooth" });
+          } else if (value.includes("benefit")|| value.includes("money") || value.includes("financial")) {
+            document.getElementById("benefits").scrollIntoView({ behavior: "smooth" });
+            
+
+          
+    </script>
 </html>
