@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Become a Community Angel | Hands of Care</title>
+<link rel="stylesheet" href="style.css" />
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-brand">Hands of Care</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="directory.html">Resource Directory</a>
+    <a href="contact.html">Request Help</a>
+    <a href="angels.html">Community Angels</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="card">
+    <h1>Become a Community Angel</h1>
+    <p>Sign up to help seniors, families, and neighbors in your community.</p>
+
+    <form id="angelForm">
+      <label>Full Name</label>
+      <input type="text" id="full_name" required>
+
+      <label>Email</label>
+      <input type="email" id="email" required>
+
+      <label>Phone</label>
+      <input type="text" id="phone" required>
+
+      <label>City</label>
+      <input type="text" id="city" required>
+
+      <label>State</label>
+      <input type="text" id="state" required>
+
+      <label>Skills</label>
+      <textarea id="skills" rows="4" placeholder="Transportation, cleaning, yard work, home repair, caregiving..." required></textarea>
+
+      <label>Availability</label>
+      <textarea id="availability" rows="3" placeholder="Weekends, mornings, evenings, flexible..." required></textarea>
+
+      <button type="submit">Submit Angel Application</button>
+    </form>
+
+    <p id="message"></p>
+
+    <br>
+    <a href="angels.html" class="button">← Back to Community Angels</a>
+  </div>
+</div>
+
+<script>
+const SUPABASE_URL = "https://klcllvuzbhrauckxpoqw.supabase.co";
+const SUPABASE_KEY = "sb_publishable_R8xpN6pCOPwupTvGA2tQ8w_vUtPgN65";
+
+const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+document.getElementById("angelForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const message = document.getElementById("message");
+  message.textContent = "Submitting...";
+
+  const angelData = {
+    full_name: document.getElementById("full_name").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    city: document.getElementById("city").value,
+    state: document.getElementById("state").value,
+    skills: document.getElementById("skills").value,
+    availability: document.getElementById("availability").value,
+    background_check: false,
+    status: "new"
+  };
+
+  const { error } = await client
+    .from("community_angels")
+    .insert([angelData]);
+
+  if (error) {
+    message.textContent = "Something went wrong. Please try again.";
+    console.log(error);
+  } else {
+    message.textContent = "Thank you! Your Community Angel application was submitted.";
+    document.getElementById("angelForm").reset();
+  }
+});
+</script>
+
+</body>
+</html>
