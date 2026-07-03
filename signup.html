@@ -30,7 +30,7 @@
 
     <p>Join Hands Care to access trusted resources, connect with services, and receive support.</p>
 
-    <form id="signupForm">
+    <form id="signupForm" onsubmit="signupUser(event)">
       <label for="fullname">Full Name</label><br>
       <input type="text" id="fullname" name="fullname" placeholder="Enter your full name"><br><br>
 
@@ -56,7 +56,7 @@
   <script>
   const signupForm = document.getElementById("signupForm");
 
-  signupForm.addEventListener("submit", async function(event) {
+    async function signupUser(event) {
     event.preventDefault();
 
     const fullName = document.getElementById("fullname").value;
@@ -79,7 +79,7 @@
       alert("Account created successfully! Please check your email to verify your account.");
       window.location.href = "login.html";
     }
-  });
+    }
 </script>
 
 </body>
