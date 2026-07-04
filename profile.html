@@ -56,5 +56,29 @@
 
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="supabase.js"></script>
+
+<script>
+async function loadProfile() {
+    const {
+        data: { user },
+    } = await supabaseClient.auth.getUser();
+
+    if (!user) {
+        window.location.href = "login.html";
+        return;
+    }
+
+    document.getElementById("fullname").value =
+        user.user_metadata.full_name || "";
+
+    document.getElementById("email").value =
+        user.email || "";
+}
+
+loadProfile();
+</script>
+
 </body>
 </html>
