@@ -45,6 +45,27 @@
     </section>
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="supabase.js"></script>
+
+<script>
+async function loadUser() {
+    const {
+        data: { user },
+    } = await supabaseClient.auth.getUser();
+
+    if (!user) {
+        window.location.href = "login.html";
+        return;
+    }
+
+    document.querySelector("h1").textContent =
+        "Welcome, " + (user.user_metadata.full_name || user.email);
+}
+
+loadUser();
+</script>
+
 </body>
 </html>
       
