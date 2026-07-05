@@ -79,7 +79,7 @@ async function loadCommunityAngels() {
 
     table.innerHTML = "<tr><td>Loading Community Angels...</td></tr>";
 
-    const { data, error } = await supabaseClient
+    const { data, error } = await supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
         .from("community_angels")
         .select("*")
         .order("created_at", { ascending: false });
