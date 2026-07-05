@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Dashboard | Hands of Care</title>
 <link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabadse-js"></script>
+<script scr="supabase.js"></script>
 </head>
 <body>
 
@@ -47,26 +50,9 @@
 <div class="card">
 <h2>Available Community Angels</h2>
 <table>
-<tr>
-<th>Name</th>
-<th>Area</th>
-<th>Skills</th>
-<th>Status</th>
-</tr>
-<tr>
-<td>Example Angel</td>
-<td>DC</td>
-<td>Transportation, errands</td>
-<td>Available</td>
-</tr>
-<tr>
-<td>Example Helper</td>
-<td>Maryland</td>
-<td>Home repair, cleanup</td>
-<td>Available</td>
-</tr>
+<tbody id="angelsTable">
+</tbody>
 </table>
-</div>
 
 <div class="card">
 <h2>Service Status</h2>
@@ -86,6 +72,47 @@ jobs, and status updates can be managed automatically.
 </div>
 
 </div>
+
+  <script>
+async function loadCommunityAngels() {
+    const table = document.getElementById("angelsTable");
+
+    table.innerHTML = "<tr><td>Loading Community Angels...</td></tr>";
+
+    const { data, error } = await supabaseClient
+        .from("community_angels")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+    if (error) {
+        table.innerHTML = "<tr><td>Could not load Community Angels.</td></tr>";
+        console.log(error);
+        return;
+    }
+
+    if (!data || data.length === 0) {
+        table.innerHTML = "<tr><td>No Community Angels yet.</td></tr>";
+        return;
+    }
+
+    table.innerHTML = "";
+
+    data.forEach(function (angel) {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${angel.full_name || ""}</td>
+            <td>${angel.city || ""}, ${angel.state || ""}</td>
+            <td>${angel.skills || ""}</td>
+            <td>${angel.status || "new"}</td>
+        `;
+
+        table.appendChild(row);
+    });
+}
+
+loadCommunityAngels();
+</script>
 
 </body>
 </html>
