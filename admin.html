@@ -84,15 +84,15 @@ const adminSupabase = window.supabase.createClient(
   "sb_publishable_R8xpN6pCOPwupTvGA2tQ8w_vUtPgN65"
 );
 
-async function loadCommunityAngels() {
 
-  <script> 
+
+   
 async function loadCommunityAngels() {
     const table = document.getElementById("angelsTable");
 
     table.innerHTML = "<tr><td>Loading Community Angels...</td></tr>";
 
-    const { data, error } = await window.supabaseClient
+    const { data, error } = await adminSupabase
         .from("community_angels")
         .select("*")
         .order("created_at", { ascending: false });
