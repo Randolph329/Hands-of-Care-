@@ -76,6 +76,16 @@ jobs, and status updates can be managed automatically.
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> 
 <script scr="supabase.js"></script>
 
+
+
+<script>
+const adminSupabase = window.supabase.createClient(
+  "https://klcllvuzhhrauckxpoqw.supabase.co",
+  "sb_publishable_R8xpN6pCOPwupTvGA2tQ8w_vUtPgN65"
+);
+
+async function loadCommunityAngels() {
+
   <script> 
 async function loadCommunityAngels() {
     const table = document.getElementById("angelsTable");
